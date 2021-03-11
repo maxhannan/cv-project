@@ -12,8 +12,8 @@ function App() {
 }
 
 export default App;
+
 const mainContainerStyle = {
   display: 'flex',
   justifyContent: 'center',
-  borderRadius: '15px'
 }
