@@ -27,15 +27,15 @@ const displayContainer = {
 }
 
 const mainInfo = {
-  width: '50%',
+
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center'
 }
 
 const contactInfo = {
-  width: '50%',
-  textAlign: 'right',
+  
+
   wordWrap: 'break-word'
 
 }
