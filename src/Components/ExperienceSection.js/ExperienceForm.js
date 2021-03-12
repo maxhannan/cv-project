@@ -1,20 +1,20 @@
 import { Button } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 
-const EducationForm = ({setEditing , setShowForm, delFn, info, handleChange}) => {
+const ExperienceForm = ({setEditing , setShowForm, delFn, info, handleChange}) => {
   const handleSubmit = (e) =>  {
     e.preventDefault()
-    setEditing(false)
+    setEditing(editing => false)
     setShowForm(showForm => !showForm)
   }
   return ( 
-    <div className="EducationFormContainer">
+    <div className="ExperienceFormContainer">
       <form style = {formStyle} onSubmit = {handleSubmit}>
       <TextField 
-        value = {info.university}
+        value = {info.company}
         onChange = {handleChange}
-        id= 'university'
-        label="University or School Name" 
+        id= 'company'
+        label="Organization" 
         variant="outlined"  
         style = {{gridArea: 'a'}} 
         fullWidth
@@ -46,14 +46,25 @@ const EducationForm = ({setEditing , setShowForm, delFn, info, handleChange}) =>
         required
       />
       <TextField 
-        value = {info.degree}
+        value = {info.position}
         onChange = {handleChange}
-        id= 'degree'
-        label="Area of Study / Degree" 
+        id= 'position'
+        label="Job Title" 
         variant="outlined"   
         style = {{gridArea: 'd'}} 
         fullWidth
         required/>
+        <TextField 
+        id= 'descrip' 
+        label="A Brief Description" 
+        value = {info.descrip}
+        onChange = {handleChange}
+        variant="outlined"
+        style = {{gridArea: 'g'}}  
+        fullWidth 
+        required
+        multiline
+        rows = {4}/> 
         <Button style = {{gridArea: 'e'}} color = 'primary' type = 'submit' variant = 'outlined'>Save</Button>
         <Button style = {{gridArea: 'f'}} color = 'secondary' onClick = {delFn} variant = 'outlined'>Delete</Button>
       </form>
@@ -61,7 +72,7 @@ const EducationForm = ({setEditing , setShowForm, delFn, info, handleChange}) =>
   );
 }
  
-export default EducationForm;
+export default ExperienceForm;
 
 const formStyle = {
   display: 'grid',
@@ -69,6 +80,7 @@ const formStyle = {
   "a a a a a a" 
   "b b b c c c" 
   "d d d d d d"
+  "g g g g g g"
   " . .  e f . . "`,
   gridGap: '1em'
 }

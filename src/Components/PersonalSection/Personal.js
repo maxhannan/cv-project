@@ -3,10 +3,21 @@ import EditBtn from '../EditBtn';
 import PersonalDisplay from './PersonalDisplay';
 import PersonalForm from './PersonalForm';
 
-const Personal = ({info, setInfo}) => {
+const Personal = () => {
   const [editing, setEditing] = useState(true)
+  
+  const [personalInfo, setPersonInfo] = useState({ 
+    firstName: '',
+    lastName: '', 
+    position: '',
+    addressOne: '',
+    addressTwo: '',
+    phone: '',
+    email: '',
+  });
+  
   const handleChange = (e) => {
-    setInfo(prevState => {
+    setPersonInfo(prevState => {
       return {...prevState, 
         [e.target.name]: e.target.value}
     })
@@ -18,9 +29,9 @@ const Personal = ({info, setInfo}) => {
       editing = {editing} 
       editFn = {() => setEditing(!editing)}  
       sectionTitle = 'Personal Info' />
-      {!editing && <PersonalDisplay info = {info}/>}
+      {!editing && <PersonalDisplay info = {personalInfo}/>}
       {editing && 
-      <PersonalForm info = {info} setInfo = {handleChange}/>}
+      <PersonalForm info = {personalInfo} setInfo = {handleChange}/>}
     </div>
   );
 }

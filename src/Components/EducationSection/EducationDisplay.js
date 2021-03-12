@@ -10,7 +10,7 @@ const EducationDisplay = ({info, handleEdit, editing, delFn}) => {
         <Typography variant="h6">
           {info.degree} from {info.university}
         </Typography>
-        <Typography variant="subtitle1" >
+        <Typography variant="subtitle1" style = {{color: 'gray'}}>
           {info.startDate.split('-')[0]} - {info.endDate.split('-')[0]}
         </Typography>
       </div>

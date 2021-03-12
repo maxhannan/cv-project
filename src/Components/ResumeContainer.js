@@ -1,27 +1,23 @@
-import { useState } from "react";
 import Container from '@material-ui/core/Container';
 import Personal from "./PersonalSection/Personal";
 import Education from "./EducationSection/Education";
 import Profile from "./ProfileSection/Profile";
+import Experience from "./ExperienceSection.js/Experience";
+import Typography from '@material-ui/core/Typography';
 
 const ResumeContainer = () => {
-  const [personalInfo, setPersonInfo] = useState({ 
-    firstName: 'Max',
-    lastName: 'Hannan', 
-    position: 'Web Developer',
-    addressOne: '1101 Spring St NE',
-    addressTwo: 'Minneapolis, Mn, 55413',
-    phone: '239-218-1349',
-    email: 'maxhannan124@gmail.com',
-  });
-  
+
   return (
     <Container maxWidth="md">
-        <div className="resumeContainer" style = {containerStyle}>
-          <Personal info = {personalInfo} setInfo = {setPersonInfo} />
-          <Profile />
-          <Education />
-        </div>
+      <div className="header" style = {headerStyle}>
+        <Typography variant="h2">Resume Creator</Typography>
+      </div>
+      <div className="resumeContainer" style = {containerStyle}>
+        <Personal />
+        <Profile />
+        <Experience />
+        <Education />
+      </div>
     </Container>
    
   );
@@ -30,11 +26,15 @@ const ResumeContainer = () => {
 export default ResumeContainer;
 const containerStyle = {
   margin: '0',
-  marginTop: '2vw',
+
   marginBottom: '2vw',
   border: '2px solid #ccc',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
   padding: '2%'
+}
+const headerStyle = {
+  margin: '2vh',
+  textAlign: 'center'
 }

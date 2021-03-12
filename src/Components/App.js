@@ -16,4 +16,5 @@ export default App;
 const mainContainerStyle = {
   display: 'flex',
   justifyContent: 'center',
+  
 }

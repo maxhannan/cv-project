@@ -17,6 +17,7 @@ const Profile = () => {
       {editing && 
         <TextField 
           id={uniqid()} 
+          error = {profile.length < 5 && profile !== ''}
           label="A Brief Introduction" 
           name = 'position'
           value = {profile}
